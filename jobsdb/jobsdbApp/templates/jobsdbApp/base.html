@@ -1,0 +1,110 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JOBS DB</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 logo">
+                    <a href="{% url 'beranda' %}">
+                        <img src="https://id.jobsdb.com/id-id/wp-content/uploads/sites/2/static/about-us/images/home-logo-main01-2.png" alt="">
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <div class="header-nav-atas">
+                        <div class="btn">
+                            <a href="" class="btn btn-info btn-biru" role="button">Log in</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid header-bg-bawah">
+            <div class="row align-items-center header-nav-bawah">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-4 navbar">
+                            <a href="{% url 'beranda' %}">HOME</a>
+                            <a href="">MY JOBSDB</a>
+                            <a href="">RESOURCES</a>
+                            <a href="">EVENT</a>
+                        </div>
+                        <div class="col-md-8">
+                            
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class=" container-fluid white-space">
+
+    </div>
+    {% block content %}
+    {% endblock %}
+    <footer>
+        <div class="container-fluid footer-blue">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-4">
+                        <img src="https://id.content.jobsdbcdn.com/Content/d1129/images/Shared/v8Revamp2/logo_ftr_blue.png" alt="">
+                        <p class="footer-text">
+                            <br>
+                            Job Posting Enquiry: <br>
+                            Phone: +62 21 3002 8899 <br>
+                            Fax: +62 21 3002 8888 / +62 21 5795 7733 <br>
+                            (Mon - Fri, 8:00am - 5:00pm) <br>
+                            Email: <a href="">CS@jobsDB.co.id</a> <br>
+                        </p>
+                    </div>
+                    <div class="col-md-2 footer-text">
+                        <span>Job Seekers</span>
+                        <br> <br> <a href=""> Browse Jobs </a>
+                        <br> <br> <a href="">Post Resumes </a>
+                        <br> <br> <a href="">Job Alerts </a>
+                        <br> <br> <a href="">My jobsDB </a>
+                    </div>
+                    <div class="col-md-2 footer-text">
+                        <span>Employers</span>
+                        <br> <br> <a href="">Post a Job </a>
+                        <br> <br> <a href="">Search Candidates </a>
+                        <br> <br> <a href="">Advertise with Us </a>
+                    </div>
+                    <div class="col-md-2 footer-text">
+                        <span>About Us</span>
+                        <br> <br> <a href="">About jobsDB </a>
+                        <br> <br> <a href="">FAQ </a>
+                        <br> <br> <a href="">Career@jobsDB </a>
+                        <br> <br> <a href="">Contact Us </a>
+                    </div>
+                    <div class="col-md-2 footer-text">
+                        <span>Tools</span>
+                        <br> <br> <a href=""> Mobile Version </a>
+                        <br> <br> <a href=""> RSS </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid footer-black">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p>Copyright © 1998-2019, jobsDB. All Rights Reserved.</p>    
+                    </div>
+                    <div class="col-md-6 footer-text-kanan">
+                        <p>Privacy Statement  |  Terms & Conditions  |  Site Map</p> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

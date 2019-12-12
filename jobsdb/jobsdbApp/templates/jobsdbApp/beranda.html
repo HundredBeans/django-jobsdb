@@ -1,0 +1,138 @@
+{% extends 'jobsdbApp/base.html' %}
+
+{% block content %}
+<body>
+    <div class="beranda-header-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 align-items-center beranda-header-no-img">
+                    <div class="beranda-header-text">
+                        <h1>Buat profil anda di jobsDB agar perusahaan yang sesuai dapat menemukan anda.</h1>
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-primary beranda-mulai-sekarang"><b>Mulai Sekarang</b></button>
+                    </div>
+                </div>
+                <div class='col-md-4'>
+                    <div class='beranda-header-img'>
+                        <img src='https://id.content.jobsdbcdn.com/Content/d1129/images/Shared/v8Revamp2/mobile_profile_id.png'>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="">
+        <div class="container beranda-form-bg">
+            <div class="row form-bg">
+                <div class="col-md-12 beranda-judul-form">
+                    <h4><b>Pencarian 4,400 Lowongan Kerja</b></h4>
+                </div>
+                <form class="beranda-form-all w-100">
+                    <div class='row'>
+                        <div class="col-md-5">
+                            <div class="input-group ml-3">
+                                <input type="text" class="form-control ml-0 w-100 beranda-search" placeholder="Masukkan Jabatan" name="jabatan">
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text" for="Lokasi">Lokasi</label>
+                                </div>
+                                <select class="custom-select" id="Lokasi" name="Lokasi">
+                                    <option selected value="6">Semua Lokasi Indonesia</option>
+                                    <option value="1">Jawa</option>
+                                    <option value="2">Sumatera</option>
+                                    <option value="3">Kalimantan</option>
+                                    <option value="4">Sulawesi</option>
+                                    <option value="5">Papua</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="beranda-cari">
+                                <input type="submit" value="Cari" class="btn btn-primary w-75">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="input-group mb-3 ml-3">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text" for="fungsi">Fungsi Pekerjaan</label>
+                                </div>
+                                <select class="custom-select" id="fungsi" name="fungsi">
+                                    <option selected value="6">Semua Fungsi Pekerjaan</option>
+                                    <option value="1">Desain</option>
+                                    <option value="2">Teknik</option>
+                                    <option value="3">IT</option>
+                                    <option value="4">HRD</option>
+                                    <option value="5">Lainnya</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text" for="perusahaan">Perusahaan</label>
+                                </div>
+                                <select class="custom-select" id="perusahaan" name="perusahaan">
+                                    <option selected value="6">Semua Perusahaan</option>
+                                    <option value="1">Alterra</option>
+                                    <option value="2">PLN</option>
+                                    <option value="3">Pertamina</option>
+                                    <option value="4">Bukalapak</option>
+                                    <option value="5">TVRI</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="container beranda-isi-bg">
+            <div class="row">
+                <div class="col-md-8 p-0 beranda-isi">
+                    <div class="row beranda-isi-header-bg pt-2">
+                        <div class="col-md-10 beranda-judul-isi">
+                            <span>Tips Karir & Rekrutmen</span>
+                        </div>
+                        <div class="col-md-2 text-right">
+                            <a href="{% url 'resource' %}" style="color:#A0A6C2">lihat semua</a>
+                        </div>
+                    </div>
+                    <div class='container'>
+                        <div class="row beranda-article-bg p-3">
+                            <div class="col-md-4">
+                                <img class="beranda-article-img" src="{{artikel.thumbnail}}">
+                            </div>
+                            <div class="col-md-8 beranda-artikel-secondary">
+                                <a href="{% url 'artikel' artikel.id%}"><h2>{{artikel.judul}}</h2></a>
+                                <p class="text-justify">{{artikel.isi|truncatewords:40}}</p>
+                                <a href="{% url 'artikel' artikel.id%}" style="color:black">Baca Selengkapnya</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='col-md-4 beranda-kanan-bg'>
+                    <div class='beranda-daftar-lowongan pt-2 text-center'>
+                        <span style="color:black">Lowongan Minggu Ini</span>
+                    </div>
+                    <div class='beranda-daftar-lowongan-list'>
+                        <ul class="list-unstyled">
+                            <li><a href="">Lowongan</a></li>
+                            <li><a href="">Lowongan</a></li>
+                            <li><a href="">Lowongan</a></li>
+                            <li><a href="">Lowongan</a></li>
+                            <li><a href="">Lowongan</a></li>
+                            <li><a href="">Lowongan</a></li>
+                            <li><a href="">Lowongan</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %}

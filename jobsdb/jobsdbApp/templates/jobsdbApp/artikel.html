@@ -1,0 +1,55 @@
+{% extends 'jobsdbApp/base.html' %}
+
+{% block content %}
+<body class="body-article">
+    <div class='container'>
+        <div class='row'>
+            <div class='col-md-8 artikel-post'>
+                <div class='artikel-judul text-center mt-5 mb-5'>
+                    <h1><b>{{artikel.judul}}</b></h1>
+                </div>
+                <div class='artikel-foto'>
+                    <img src='{{artikel.thumbnail}}'>
+                </div>
+                <div class='artikel-isi'>
+                    <br>
+                    <p>{{artikel.isi}}</p>
+                    <div class='row'>
+                        <div class='col-md-6 text-left'>
+                            {% load static %}
+                            <a href="{% url 'resource' %}">< Lihat Artikel Lainnya</a>
+                        </div>
+                        <div class='col-md-6 text-right'>
+                            <span>posted on: <b>{{artikel.tanggal_publikasi}}</b></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='col-md-1'></div>
+            <div class='col-md-3 artikel-lainnya'>
+                <div class='artikel-judul-lainnya mt-5 mb-5'>
+                    <div class='row'>
+                        <div class='col-md-1 d-flex align-items-center text-right'>
+                        </div>
+                        <div class='col-md-11 text-justify'>
+                            <h3>Artikel Lainnya</h3>
+                        </div>
+                    </div>
+                </div>
+                {% for article in articles %}
+                <div class='row'>
+                    <div class='col-md-2 circle-border d-flex align-items-center'>
+                        <img src="{% static 'img/artikel/icon_artikel.png' %}">
+                    </div>
+                    <div class='col-md-10'>
+                        <div class='artikel-list text-center'>
+                            <a href="{% url 'artikel' article.id%}"><span>{{article.judul}}</span></a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %}
