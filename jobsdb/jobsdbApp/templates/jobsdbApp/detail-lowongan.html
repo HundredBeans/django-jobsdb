@@ -7,47 +7,30 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-2">
-
                 </div>
                 <div class="col-md-8">
-                    <div class="row align-items-center search-konten">
+                    <div class="row align-items-center detail-konten">
                         <div class="col-md-12">
                             <div class="search-tgl-publikasi">
-                                <p>3 Des 2019</p>
+                                <p>{{lowongan.tanggal_publikasi}}</p>
                             </div>
                             <div class="lowongan-pict search-pict">
-                                <img src="https://bootstraplogos.com/wp-content/uploads/edd/2018/03/logo.png" alt="">
+                                <img src="{{lowongan.link_image}}" alt="">
                             </div>
                             <div class="search-jabatan lowongan-jabatan">
-                                <p><span>Data Engineer (Python/R)</span></p>
+                                <p><span>{{lowongan.jabatan}}</span></p>
                             </div>
                             <div class="search-perusahaan lowongan-jabatan">
-                                <p>Snaphunt Pte Ltd</p>
+                                <p>{{lowongan.perusahaan}}</p>
                             </div>
                             <div class="seacrh-lokasi lowongan-jabatan">
-                                <p>Jakarta, Indonesia</p>
+                                <p>{{lowongan.lokasi}}</p>
                             </div>
                             <div class="search-gaji lowongan-jabatan">
-                                <p>IDR 160,000 – 250,000</p>
+                                <p>Rp.{{lowongan.gaji_min}} - Rp.{{lowongan.gaji_max}}</p>
                             </div>
                             <div class="search-deskripsi lowongan-deskripsi">
-                                <p>
-                                    Job Description:
-
-                                    Answer questions using statistical techniques that are in accordance with available data
-                                    Creating and developing powerful learning models and natural language processing models
-                                    Taking very large amounts of data from various sources
-                                    Analyze data from various angles to look for existing weaknesses, see trends, and opportunities that have not been explored 
-                                
-                                    Job Requirements:
-                                
-                                    Fresh Graduate is welcome to apply
-                                    At least have 1 year of work experience in the related field (is a plus)
-                                    Ever to use and like working with Big Data Experience using SQLServer, Phyton, R, etc
-                                    Can see patterns like solving puzzles 
-                                    Able to articulate ideas
-                                    Can work under pressure 
-                                </p>
+                                <p>{{lowongan.deskripsi}}</p>
                             </div>
                         </div>
                     </div>
