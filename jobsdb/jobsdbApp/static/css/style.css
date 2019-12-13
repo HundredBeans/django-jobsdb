@@ -322,7 +322,7 @@ header{
 
 /* ------------------------------------- RESOURCE ----------------------------------- */
 .resource-big-pict img{
-    height: 400px;
+    width: 400px;
     display: table;
     margin: 0 auto;
 }
