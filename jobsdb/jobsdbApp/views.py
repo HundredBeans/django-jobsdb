@@ -56,3 +56,6 @@ def detailLowongan(request, lowongan_id):
         'lowongan':lowongan
     }
     return render(request, 'jobsdbApp/detail-lowongan.html', info)
+
+def download(request):
+    return render(request, 'jobsdbApp/download.html')

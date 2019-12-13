@@ -9,4 +9,5 @@ urlpatterns = [
     path('event/', views.event, name='event'),
     path('artikel/<artikel_id>', views.artikel, name='artikel'),
     path('artikel', views.resource, name='resource'),
+    path('download', views.download, name='download'),
 ]
