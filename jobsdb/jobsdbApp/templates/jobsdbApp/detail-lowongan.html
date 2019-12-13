@@ -29,8 +29,11 @@
                             <div class="search-gaji lowongan-jabatan">
                                 <p>Rp.{{lowongan.gaji_min}} - Rp.{{lowongan.gaji_max}}</p>
                             </div>
+                            <div class="seacrh-lokasi lowongan-jabatan">
+                                <p>Minimal Pengalaman : {{lowongan.pengalaman}} tahun</p>
+                            </div>
                             <div class="search-deskripsi lowongan-deskripsi">
-                                <p>{{lowongan.deskripsi}}</p>
+                                <p>{{lowongan.deskripsi|safe}}</p>
                             </div>
                         </div>
                     </div>
