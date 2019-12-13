@@ -90,3 +90,6 @@ def search(request):
         'lowongan':lowongan,
     }
     return render(request, 'jobsdbApp/search-result.html', info)
+
+def download(request):
+    return render(request, 'jobsdbApp/download.html')

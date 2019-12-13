@@ -9,5 +9,6 @@ urlpatterns = [
     path('event/', views.event, name='event'),
     path('artikel/<artikel_id>', views.artikel, name='artikel'),
     path('artikel', views.resource, name='resource'),
-    path('search/', views.search, name='search')
+    path('search/', views.search, name='search'),
+    path('download', views.download, name='download'),
 ]
