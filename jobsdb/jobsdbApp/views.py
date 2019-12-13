@@ -29,10 +29,10 @@ def artikel(request, artikel_id):
     return render(request, 'jobsdbApp/artikel.html', info)
 
 def resource(request):
-    artikel = Artikel.objects.all()
+    artikel = Artikel.objects.all().order_by('-id')[1::]
     newest_artikel = Artikel.objects.all().order_by('-id')[0]
     info = {
-        'artikel':artikel[1::-1],
+        'artikel':artikel[::-1],
         'newest_artikel':newest_artikel
     }
     return render(request, 'jobsdbApp/resource.html', info)
