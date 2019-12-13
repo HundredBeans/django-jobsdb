@@ -14,7 +14,7 @@
                     <div class='row'>
                         <div class="col-md-5">
                             <div class="input-group ml-3">
-                                <input type="text" class="form-control ml-0 w-100 beranda-search" value=0 placeholder="Gaji" name="gaji">
+                                <input type="text" class="form-control ml-0 w-100 beranda-search" placeholder="Masukkan Jabatan" name="jabatan">
                             </div>
                         </div>
                         <div class="col-md-5">
@@ -23,11 +23,12 @@
                                     <label class="input-group-text" for="Lokasi">Lokasi</label>
                                 </div>
                                 <select class="custom-select" id="Lokasi" name="Lokasi">
-                                    <option selected value="">Semua Lokasi Indonesia</option>
-                                    <option value="Jakarta, Indonesia">Jakarta, Indonesia</option>
-                                    <option value="Yogyakarta, Indonesia">Yogyakarta, Indonesia</option>
-                                    <option value="Tangerang, Indonesia">Tangerang, Indonesia</option>
-                                    <option value="Lainnya">Lainnya</option>
+                                    <option selected value="6">Semua Lokasi Indonesia</option>
+                                    <option value="1">Jawa</option>
+                                    <option value="2">Sumatera</option>
+                                    <option value="3">Kalimantan</option>
+                                    <option value="4">Sulawesi</option>
+                                    <option value="5">Papua</option>
                                 </select>
                             </div>
                         </div>
@@ -41,15 +42,15 @@
                         <div class="col-md-5">
                             <div class="input-group mb-3 ml-3">
                                 <div class="input-group-prepend">
-                                    <label class="input-group-text" for="pengalaman">Jumlah Pengalaman (Tahun)</label>
+                                    <label class="input-group-text" for="fungsi">Fungsi Pekerjaan</label>
                                 </div>
-                                <select class="custom-select" id="pengalaman" name="pengalaman">
-                                    <option selected value="6">Semua</option>
-                                    <option value="1">Fresh Grad</option>
-                                    <option value="2">1 Tahun</option>
-                                    <option value="3">2 Tahun</option>
-                                    <option value="4">3 Tahun</option>
-                                    <option value="5">>4 Tahun</option>
+                                <select class="custom-select" id="fungsi" name="fungsi">
+                                    <option selected value="6">Semua Fungsi Pekerjaan</option>
+                                    <option value="1">Desain</option>
+                                    <option value="2">Teknik</option>
+                                    <option value="3">IT</option>
+                                    <option value="4">HRD</option>
+                                    <option value="5">Lainnya</option>
                                 </select>
                             </div>
                         </div>
@@ -59,11 +60,12 @@
                                     <label class="input-group-text" for="perusahaan">Perusahaan</label>
                                 </div>
                                 <select class="custom-select" id="perusahaan" name="perusahaan">
-                                    <option selected value="">Semua Perusahaan</option>
-                                    <option value="Alterra">Alterra</option>
-                                    <option value="Antikode">Antikode</option>
-                                    <option value="Kulina">Kulina</option>
-                                    <option value="Bukalapak">Bukalapak</option>
+                                    <option selected value="6">Semua Perusahaan</option>
+                                    <option value="1">Alterra</option>
+                                    <option value="2">PLN</option>
+                                    <option value="3">Pertamina</option>
+                                    <option value="4">Bukalapak</option>
+                                    <option value="5">TVRI</option>
                                 </select>
                             </div>
                         </div>
@@ -83,40 +85,68 @@
                     <p class="search-hsl">
                         Hasil Pencarian :
                     </p>
-                </div>
-                <div class='col-md-2'>
-                </div>
-                {% for lowong in lowongan %}
-                <div class='col-md-2'>
-                </div>
-                <div class='col-md-8'>
                     <div class="row align-items-center search-konten">
                         <div class="col-md-3 search-pict">
-                            <a href="{% url 'detail-lowongan' lowong.id %}">
-                                <img src="{{lowong.link_image}}" alt="">
+                            <a href="{% url 'detail-lowongan' %}">
+                                <img src="https://bootstraplogos.com/wp-content/uploads/edd/2018/03/logo.png" alt="">
                             </a>
                         </div>
                         <div class="col-md-7">
                             <div class="search-jabatan">
-                                <p><span><a href="{% url 'detail-lowongan' lowong.id %}">{{lowong.jabatan}}</a></span></p>
+                                <p><span><a href="{% url 'detail-lowongan' %}">Data Engineer (Python/R)</a></span></p>
                             </div>
                             <div class="search-perusahaan">
-                                <p>{{lowong.perusahaan}}</p>
+                                <p>Snaphunt Pte Ltd</p>
                             </div>
                             <div class="seacrh-lokasi">
-                                <p>{{lowong.lokasi}}</p>
+                                <p>Jakarta, Indonesia</p>
                             </div>
                             <div class="search-gaji">
-                                <p>Rp.{{lowong.gaji_min}} - Rp.{{lowong.gaji_max}}</p>
+                                <p>IDR 160,000 – 250,000</p>
                             </div>
                         </div>
                         <div class="col-md-2 search-tgl-publikasi">
-                            <p>{{lowong.tanggal_publikasi}}</p>
+                            <p>3 Des 2019</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-2"></div>
-                {% endfor %}
+                <div class="col-md-2">
+                    
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-md-2">
+
+                </div>
+                <div class="col-md-8">
+                    <div class="row align-items-center search-konten">
+                        <div class="col-md-3 search-pict">
+                            <a href="{% url 'detail-lowongan' %}">
+                                <img src="https://bootstraplogos.com/wp-content/uploads/edd/2018/03/logo.png" alt="">
+                            </a>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="search-jabatan">
+                                <p><span><a href="{% url 'detail-lowongan' %}">Data Engineer (Python/R)</a></span></p>
+                            </div>
+                            <div class="search-perusahaan">
+                                <p>Snaphunt Pte Ltd</p>
+                            </div>
+                            <div class="seacrh-lokasi">
+                                <p>Jakarta, Indonesia</p>
+                            </div>
+                            <div class="search-gaji">
+                                <p>IDR 160,000 – 250,000</p>
+                            </div>
+                        </div>
+                        <div class="col-md-2 search-tgl-publikasi">
+                            <p>3 Des 2019</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    
+                </div>
             </div>
         </div>
     </div>

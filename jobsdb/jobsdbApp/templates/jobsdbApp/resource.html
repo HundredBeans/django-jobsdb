@@ -50,13 +50,13 @@
 
                 </div>
                 <div class="col-md-3 resource-del-padding resource-up">
-                    <div class="resource-artikel-terbaru">
-                        <div class="row align-items-center resource-del-margin-small resource-border-small">
+                    <div class="">
+                        <div class="row align-items-center resource-artikel-terbaru">
                             <p>Artikel Terbaru</p>
                         </div>
                         {% for artikel in artikel %}
-                            <div class="row align-items-center resource-del-margin-small resource-list-judul">
-                                <p>{{artikel.judul}}</p>
+                            <div class="row align-items-center resource-list-judul">
+                                <a href="{% url 'artikel' artikel.id %}"> <p>{{artikel.judul}}</p> </a>
                             </div>
                         {% endfor %}
                     </div>

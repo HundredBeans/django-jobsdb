@@ -8,7 +8,7 @@ def beranda(request):
     lowongan = Lowongan.objects.all()
     info = {
         'flag':1,
-        'lowongan':lowongan,
+        'lowongan':lowongan[::-1],
         'artikel':artikel,
     }
     return render(request, 'jobsdbApp/beranda.html', info)
@@ -38,6 +38,21 @@ def resource(request):
     return render(request, 'jobsdbApp/resource.html', info)
 
 def searchResult(request):
-    return render(request, 'jobsdbApp/search-result.html')
-def detailLowongan(request):
-    return render(request, 'jobsdbApp/detail-lowongan.html')
+    lowongan = Lowongan.objects.all()
+    gaji_filter = Lowongan.objects.filter(gaji_max__gte=request.POST['gaji'], gaji_min__lte=request.POST['gaji']) | Lowongan.objects.filter(gaji_max__gte=request.POST['gaji'], gaji_min__gte=request.POST['gaji'])
+    pengalaman_filter = Lowongan.objects.filter(pengalaman__lte=request.POST['pengalaman'])
+    lokasi_filter = Lowongan.objects.filter(lokasi=request.POST['lokasi'])
+    info = {
+        'lowongan':lowongan,
+        # 'gaji_filter':gaji,
+        # 'pengalaman_filter':pengalaman,
+        # 'lokasi_filter':lokasi
+    }
+    return render(request, 'jobsdbApp/search-result.html', info)
+
+def detailLowongan(request, lowongan_id):
+    lowongan = Lowongan.objects.get(pk=lowongan_id)
+    info = {
+        'lowongan':lowongan
+    }
+    return render(request, 'jobsdbApp/detail-lowongan.html', info)
