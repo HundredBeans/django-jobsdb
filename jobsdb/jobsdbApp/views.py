@@ -29,10 +29,10 @@ def artikel(request, artikel_id):
     return render(request, 'jobsdbApp/artikel.html', info)
 
 def resource(request):
-    artikel = Artikel.objects.all()
+    artikel = Artikel.objects.all().order_by('-id')[1::]
     newest_artikel = Artikel.objects.all().order_by('-id')[0]
     info = {
-        'artikel':artikel[1::-1],
+        'artikel':artikel[::-1],
         'newest_artikel':newest_artikel
     }
     return render(request, 'jobsdbApp/resource.html', info)
@@ -67,3 +67,26 @@ def detailLowongan(request, lowongan_id):
         'lowongan':lowongan
     }
     return render(request, 'jobsdbApp/detail-lowongan.html', info)
+
+def search(request):
+    lowongan = Lowongan.objects.all()
+    if request.POST['gaji'] == '0':
+        lowongan = Lowongan.objects.all()
+    else:
+        lowongan = lowongan.filter(gaji_max__gte=request.POST['gaji'], gaji_min__lte=request.POST['gaji']) | lowongan.filter(gaji_max__gte=request.POST['gaji'], gaji_min__gte=request.POST['gaji'])
+    if request.POST['pengalaman'] == 'semua':
+        lowongan = lowongan.all()
+    else:
+        lowongan = lowongan.filter(pengalaman__lte=request.POST['pengalaman'])
+    if request.POST['perusahaan'] == 'semua':
+        lowongan = lowongan.all()
+    else:
+        lowongan = lowongan.filter(perusahaan=request.POST['perusahaan'])
+    if request.POST['lokasi'] == 'semua':
+        lowongan = lowongan.all()
+    else:
+        lowongan = lowongan.filter(lokasi=request.POST['lokasi'])
+    info = {
+        'lowongan':lowongan,
+    }
+    return render(request, 'jobsdbApp/search-result.html', info)
