@@ -1,13 +1,69 @@
 {% extends 'jobsdbApp/base.html' %}
-
+{% load static %}
 {% block content %}
-<body>
-    <div class='container'>
-        <div class='row'>
-            <div class='col-md-8'>
-                <span>Tips Dunia Kerja</span>
+<body class="">
+    <div class="search-white-space search-bg"></div>
+    <div class="container-fluid search-bg">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-7 resource-border-md-7">
+                    <div class="row align-items-center resource-del-margin">
+                        <div class="search-tgl-publikasi resource-tgl-punlikasi">
+                            <p>{{newest_artikel.tanggal_publikasi}}</p>
+                        </div>
+                        <div class="resource-big-pict">
+                            <img src="{{newest_artikel.thumbnail}}" alt="">
+                        </div>
+                        <div class="resource-judul">
+                            <p>
+                                {{newest_artikel.judul}}
+                            </p>
+                        </div>
+                        <div class="resource-isi">
+                            <p class="">&emsp;&emsp;&emsp;{{newest_artikel.isi|truncatewords:40}}
+                            <a href="{% url 'artikel' newest_artikel.id %}" style="color:black">Baca Selengkapnya</a></p>
+                        </div>
+                    </div>
+                    <div class="row align-items-center resource-del-margin-small">
+                        <div class="col-md-12 search-white-space search-bg"></div>
+                        {% for artikel in artikel %}
+                            <div class="col-md-6 resource-border-small">
+                                <div class="resource-small-pict">
+                                    <img src="{{artikel.thumbnail}}" alt="">
+                                </div>
+                                <div class="resource-judul-small">
+                                    <p>
+                                        {{artikel.judul}}
+                                    </p>
+                                </div>
+                                <div class="resource-isi-small">
+                                    <p class="">&emsp;{{artikel.isi|truncatewords:20}}
+                                        <a href="{% url 'artikel' artikel.id %}" style="color:black">Baca Selengkapnya
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="col-md-1">
+
+                </div>
+                <div class="col-md-3 resource-del-padding resource-up">
+                    <div class="resource-artikel-terbaru">
+                        <div class="row align-items-center resource-del-margin-small resource-border-small">
+                            <p>Artikel Terbaru</p>
+                        </div>
+                        {% for artikel in artikel %}
+                            <div class="row align-items-center resource-del-margin-small resource-list-judul">
+                                <p>{{artikel.judul}}</p>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+    <div class="search-white-space search-bg"></div>
 </body>
 {% endblock %}
