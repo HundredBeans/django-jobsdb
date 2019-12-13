@@ -37,7 +37,7 @@
                                     </p>
                                 </div>
                                 <div class="resource-isi-small">
-                                    <p class="">&emsp;{{artikel.isi|truncatewords:20}}
+                                    <p class="">&emsp;{{artikel.isi|safe|truncatewords:20}}
                                         <a href="{% url 'artikel' artikel.id %}" style="color:black">Baca Selengkapnya
                                         </a>
                                     </p>

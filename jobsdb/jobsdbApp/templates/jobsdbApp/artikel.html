@@ -12,8 +12,7 @@
                     <img src='{{artikel.thumbnail}}'>
                 </div>
                 <div class='artikel-isi'>
-                    <br>
-                    <p>{{artikel.isi}}</p>
+                    {{artikel.isi|safe}}
                     <div class='row'>
                         <div class='col-md-6 text-left'>
                             {% load static %}
